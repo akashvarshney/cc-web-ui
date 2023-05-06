@@ -49,7 +49,7 @@
     <v-app-bar density="default" style="padding:0px 10% !important;" class="bg-white">
       <v-tabs color="primary" v-model="activetab">
         <v-tab value="home" @click="navigate('home')">Home</v-tab>
-        <v-tab value="contest">Contest</v-tab>
+        <v-tab value="contest"  @click="navigate('contest')">Contest</v-tab>
         <v-tab value="participant">Participant</v-tab>
         <v-tab value="jobs">Jobs</v-tab>
         <v-tab value="candiate" @click="navigate('candidate')">Candidate</v-tab>
@@ -79,15 +79,7 @@
 import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'AppLayout',
-  data: () => ({
-    links: [
-      'Home',
-      'About Us',
-      'Team',
-      'Services',
-      'Blog',
-      'Contact Us',
-    ],
+  data: () => ({    
     fav: true,
     menu: false,
     message: false,

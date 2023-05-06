@@ -8,10 +8,22 @@ import BlogView from '../views/main/BlogView.vue'
 import ContactUsView from '../views/main/ContactUsView.vue'
 import ServicesView from '../views/main/ServicesView.vue'
 import TeamView from '../views/main/TeamView.vue'
+import NewContest from '../views/contest/NewContest.vue'
+import ContestView from '../views/contest/ContestView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/contest',
+      name: 'contest',
+      component: ContestView
+    },
+    {
+      path: '/contestnew',
+      name: 'contestnew',
+      component: NewContest
+    },
     {
       path: '/aboutus',
       name: 'about',

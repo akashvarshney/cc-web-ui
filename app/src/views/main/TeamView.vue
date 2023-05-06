@@ -19,7 +19,7 @@
   </v-main>
 </template>
   
-<script>
+<script lang="ts">
 export default {
   name: 'TeamPage',
   data() {
