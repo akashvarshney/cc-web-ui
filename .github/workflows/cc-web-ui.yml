@@ -3,7 +3,7 @@ name: cc-ui-build and deploy
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'app/**'
       - '.github/workflows/cc-web-ui.yml'
@@ -15,7 +15,7 @@ env:
 
 jobs:
   build-dev:
-    if: ${{ github.ref == 'refs/heads/master' }}  
+    if: ${{ github.ref == 'refs/heads/main' }}  
     runs-on: ubuntu-latest
     environment: Production
     env:
