@@ -17,52 +17,62 @@ const router = createRouter({
     {
       path: '/contest',
       name: 'contest',
-      component: ContestView
+      component: ContestView,
+      meta: { auth: true }
     },
     {
       path: '/contestnew',
       name: 'contestnew',
-      component: NewContest
+      component: NewContest,
+      meta: { auth: true }
     },
     {
       path: '/aboutus',
       name: 'about',
-      component: AboutView
+      component: AboutView,
+      meta: { auth: true }
     },
     {
       path: '/blog',
       name: 'blog',
-      component: BlogView
+      component: BlogView,
+      meta: { auth: true }
     },
     {
       path: '/contactus',
       name: 'contactus',
-      component: ContactUsView
+      component: ContactUsView,
+      meta: { auth: true }
     },
     {
       path: '/services',
       name: 'services',
-      component: ServicesView
+      component: ServicesView,
+      meta: { auth: true }
     },
     {
       path: '/team',
       name: 'team',
-      component: TeamView
+      component: TeamView,
+      meta: { auth: true }
     },
     {
       path: '/register',
       name: 'register',
-      component: RegisterView
+      component: RegisterView,
+      meta: { auth: true }
     },
     {
       path: '/login',
       name: 'login',
-      component: LoginView
+      component: LoginView,
+      meta: { auth: true }
     },
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: { auth: true }
     }
 
   ]
