@@ -1,9 +1,67 @@
 {
-    "routes": [
-      {
-        "route": "/*",
-        "serve": "/index.html",
-        "statusCode": 200
-      }
-    ]
-  }
+  "routes": [
+    {
+      "route": "/",
+      "serve": "/index.htm",
+      "statusCode": 200
+    },
+    {
+      "route": "/contest",
+      "serve": "contest",
+      "statusCode": 200
+    },
+    {
+      "route": "/contestnew",
+      "serve": "contestnew",
+      "statusCode": 200
+    },
+    {
+      "route": "/aboutus",
+      "serve": "about",
+      "statusCode": 200
+    },
+    {
+      "route": "/blog",
+      "serve": "blog",
+      "statusCode": 200
+    },
+    {
+      "route": "/contactus",
+      "serve": "contactus",
+      "statusCode": 200
+    },
+    {
+      "route": "/services",
+      "serve": "services",
+      "statusCode": 200
+    },
+    {
+      "route": "/tea",
+      "serve": "team",
+      "statusCode": 200
+    },
+    {
+      "route": "/register",
+      "serve": "register",
+      "statusCode": 200
+    },
+    {
+      "route": "/logi",
+      "serve": "login",
+      "statusCode": 200
+    },
+    {
+      "route": "/",
+      "serve": "home",
+      "statusCode": 200
+    }
+  ]
+}
+
+
+{
+  routes: [
+    
+
+  ]
+}
