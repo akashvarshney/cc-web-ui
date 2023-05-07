@@ -1,36 +1,28 @@
 <template>
   <v-main>
-    <div class="table-responsive">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Active</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in items" :key="item.id">
-          <td>{{ item.name }}</td>
-          <td>{{ item.email }}</td>
-          <td>{{ item.active ? 'Yes' : 'No' }}</td>
-          <td>
-            <button class="btn btn-sm btn-outline-primary mr-2" @click="toggleItem(item)">
-              {{ item.active ? 'Disable' : 'Enable' }}
-            </button>
-            <button class="btn btn-sm btn-outline-secondary mr-2" @click="editItem(item)">
-              Edit
-            </button>
-            <button class="btn btn-sm btn-outline-danger" @click="deleteItem(item)">
-              Delete
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <v-btn color="primary" @click="navigate('contestnew')" >Add New Contest</v-btn>
+    <v-container>
+      <v-label style="font-size: x-large;">Setup your page and workflow.</v-label>
+      <v-card></v-card>
+      <v-btn color="primary" @click="navigate('contestnew')">Add New Contest</v-btn>
+    </v-container>    
+    <v-container class="grey lighten-5">
+      <v-row no-gutters class="align-items-center" v-for="(contest, index) in contests" :key="index">
+        <v-col cols="12" sm="6">
+          <v-card class="pa-2" outlined tile>
+            {{ contest.name }}
+          </v-card>
+        </v-col>
+        <v-col cols="12" sm="2" class="d-flex justify-center">
+          <v-switch v-model="contest.isActive" color="green" label="Active" hide-details></v-switch>
+        </v-col>
+        <v-col cols="12" sm="2" class="d-flex justify-center">
+          <v-icon color="primary" @click="editContest(index)">mdi-pencil</v-icon>
+        </v-col>
+        <v-col cols="12" sm="2" class="d-flex justify-center">
+          <v-icon color="error" @click="deleteContest(index)">mdi-delete</v-icon>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-main>
 </template>
 
@@ -41,17 +33,42 @@ import { useRouter, useRoute } from 'vue-router'
 const router = useRouter()
 const route = useRoute()
 
+const contests = ref([
+  {
+    name: 'Contest 1',
+    isActive: false,
+  },
+  {
+    name: 'Contest 2',
+    isActive: true,
+  },
+  {
+    name: 'Contest 3',
+    isActive: false,
+  },
+])
+
 const navigate = (name: string) => {
   router.push({
     name: name
   });
 };
-const items =   [
-        { id: 1, name: 'John', email: 'john@example.com', active: true },
-        { id: 2, name: 'Jane', email: 'jane@example.com', active: false },
-        { id: 3, name: 'Bob', email: 'bob@example.com', active: true },
-        { id: 4, name: 'Alice', email: 'alice@example.com', active: false },
-      ];
-  
+
+const editContest = (index: number) => {
+  // implement edit contest logic
+}
+
+const deleteContest = (index: number) => {
+  contests.value.splice(index, 1)
+}
 
 </script>
+
+<style scoped>
+.width-50{
+  width: 50%;
+}
+.align-items-center{
+  align-items: center;
+}
+</style>
